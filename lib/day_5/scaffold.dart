@@ -8,8 +8,8 @@ class ScaffoldDay5 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // actions: [Text("Keluar")],
-        title: Text("DukunSaldo"),
-        backgroundColor: Colors.white,
+        title: Text("Registrasi"),
+        backgroundColor: Colors.green,
         shadowColor: Colors.black38,
         elevation: 4,
         actions: [
@@ -19,136 +19,142 @@ class ScaffoldDay5 extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             Container(
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.grey[350],
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(1, 1),
-                    blurStyle: BlurStyle.outer,
-                    blurRadius: 5,
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    margin: EdgeInsets.fromLTRB(20, 0, 10, 30),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        // Masukkan link gambar dari internet di dalam tanda kutip
-                        image: AssetImage("assets/images/icon.jpg"),
-                        fit: BoxFit.cover,
-                        // Memastikan gambar menutupi seluruh area lingkaran tanpa gepeng
-                      ),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Atio Wahyudi Saputra",
-                          style: TextStyle(fontSize: 25),
-                        ),
-                        Text(
-                          "Developer Mandiri",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "Cilincing, Jakarta",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // card1
-            Container(
               padding: EdgeInsets.all(20),
-              width: double.infinity,
-              height: 230,
-              margin: EdgeInsets.only(top: 0),
-
               child: Container(
-                margin: EdgeInsets.only(top: 0),
+                width: double.infinity,
+                // height: 500,
                 decoration: BoxDecoration(
-                  color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: [BoxShadow(blurRadius: 5)],
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(8, 8),
+                      color: Colors.black.withValues(alpha: 0.2),
+                      // blurStyle: BlurStyle.outer,
+                      blurRadius: 15,
+                      spreadRadius: -4,
+                    ),
+                  ],
+                  color: Colors.white,
                 ),
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Detail Kontak",
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Text(
+                          "Regist Your Account",
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
-                          height: 12,
-                        ), // Memberikan jarak antara judul dan isi
-                        // --- IMPLEMENTASI POIN 3: Detail Kontak ---
-                        // Gunakan Row berisi Icon dan Text, wajib menyisipkan SizedBox
-                        Row(
-                          children: [
-                            Icon(Icons.email),
-                            SizedBox(
-                              width: 10,
-                            ), // SizedBox sebagai jarak antara Icon dan Text
-                            Text(
-                              "aws@jaya.com", // Disesuaikan dengan contoh logika output
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ],
+                      ),
+                      SizedBox(height: 20),
+                      Text("username"),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          labelText: "Username",
+                          hintText: "Masukkan Username",
+                          fillColor: Colors.grey[250],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
+                      ),
+                      SizedBox(height: 10),
+                      Text("Email"),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          labelText: "Email",
+                          hintText: "Masukkan Email",
+                          fillColor: Colors.grey[250],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text("Password"),
+                      SizedBox(height: 10),
+                      TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          labelText: "Password",
+                          hintText: "Masukkan Password",
+                          fillColor: Colors.grey[250],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30),
 
-                        SizedBox(height: 12), // Jarak vertikal antar baris
-                        // --- IMPLEMENTASI POIN 4: Informasi Pendukung ---
-                        // Gunakan Row, dan gunakan widget Spacer untuk rata kanan otomatis
-                        Row(
-                          children: [
-                            Icon(Icons.phone, size: 20),
-                            SizedBox(width: 10),
-                            Text("0812-xxxx", style: TextStyle(fontSize: 16)),
-                            Spacer(), // Spacer akan mendorong elemen setelahnya ke ujung kanan
-                            Icon(Icons.location_on, size: 20),
-                            SizedBox(width: 4),
-                            Text(
-                              "Jakarta Pusat",
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ],
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green,
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () {},
+                          child: const Text("Register Pag"),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
+            Container(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                padding: EdgeInsets.all(20),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(8, 8),
+                      color: Colors.black.withValues(alpha: 0.2),
+                      // blurStyle: BlurStyle.outer,
+                      blurRadius: 15,
 
-            // section 2
+                      spreadRadius: -4,
+                    ),
+                  ],
+                  color: Colors.white,
+                ),
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 2,
+                    crossAxisSpacing: 2,
+                  ),
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.asset(
+                      "assets/images/icon.jpg",
+                      fit: BoxFit.cover,
+                    );
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
